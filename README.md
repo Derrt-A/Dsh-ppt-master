@@ -88,6 +88,9 @@ powershell -File scripts\setup.ps1 -Python C:\py\python.exe   # 复用已有解�
 powershell -File scripts\setup.ps1 -SkipDeps                  # 只建 venv，不装 Python 依赖
 ```
 
+> **包名提示**：npm 上已有另一个独立项目也叫 `dsh-ppt`。本项目未发布到 npm，请按上面的
+> `link:` 方式安装本仓库，不要执行 `dsh plugin add dsh-ppt`（那会装到另一个项目）。
+
 ## 配置
 
 数据根目录优先级：`DSH_PPT_DATA` 环境变量 → 包根 `config.local.json` 的 `dataRoot` →
@@ -190,9 +193,28 @@ schema；`test/state.test.mjs` 在临时数据区里验证 `ppt_status`、门1/�
 - **默认关闭图片与音频后端**：`image_backend=none`、`audio=false`；需要时在
   `settings.json` 中开启并配置对应 API key（引擎自带 `.env.example`）。
 
+## 相关项目与差异
+
+这个方向已有多个公开项目，形态并不相同；本项目与它们没有代码或授权关系：
+
+| 项目 | 形态 | 与本案的关系 |
+|---|---|---|
+| [ppt-master](https://github.com/hugohe3/ppt-master) | 上游 AI 演示文稿引擎（MIT） | 本插件驱动的引擎，安装时按版本拉取，不随仓库分发 |
+| [pn1024/dsh-ppt-master](https://github.com/pn1024/dsh-ppt-master) | 把 ppt-master 打包成 DSH skill provider（MIT） | 同赛道、同名类项目；本项目是 8 工具状态机，不是 skill 包装 |
+| [SAXEM1997/dsh-ppt-master-wrapper](https://github.com/SAXEM1997/dsh-ppt-master-wrapper) | 逐字节 vendor 上游 + 3 个生命周期工具（MIT） | 采用“不 vendor、按版本下载”的相反取舍 |
+| [STARDUSTLC666/dsh-ppt](https://github.com/STARDUSTLC666/dsh-ppt) | npm 上的完整 DSH 演示插件（MIT） | 独立引擎，生成 HTML/PPTX 工程；本项目的引擎是 ppt-master |
+| [OMSociety/dsh-ppt-maker](https://github.com/OMSociety/dsh-ppt-maker) | 11 个 `ppt_*` 工具的 DSH 插件（MIT） | 纯 TS 引擎；本项目用 Python 引擎 + 三门制状态机 |
+| [Presenton](https://github.com/presenton/presenton) / [PPTist](https://github.com/pipipi-pikachu/PPTist) | 开源 AI PPT 应用（Apache-2.0 / AGPL-3.0） | 相邻品类；本项目未使用其代码 |
+| [Slidev](https://github.com/slidevjs/slidev) / [Marp](https://github.com/marp-team/marp) | Markdown 演示工具（MIT） | 面向开发者写幻灯片，不是 PPTX 状态机 |
+| [python-pptx](https://github.com/scanny/python-pptx) / [PptxGenJS](https://github.com/gitbrent/PptxGenJS) | PPTX 生成库（MIT） | 上游引擎的底层依赖类别 |
+
+本项目的差异点：**持久化 8 工具状态机 + 三道人工门 + 双层 critic + 不 vendor 引擎 +
+可离线测试**；价值在编排与质量门，而不是重写 SVG→DrawingML 转换器。
+
 ## 许可与第三方
 
 本项目代码以 **MIT** 许可发布，见 [LICENSE](LICENSE)。它驱动的 ppt-master 引擎是
 Copyright (c) 2025-2026 Hugo He 的 MIT 项目，安装时从
-<https://github.com/hugohe3/ppt-master> 拉取，本仓库不分发其代码或模板资源。第三方声明与
-“无隶属关系”说明见 [NOTICE.md](NOTICE.md)。
+<https://github.com/hugohe3/ppt-master> 拉取，本仓库不分发其代码或模板资源；上游 MIT
+全文另存于 [docs/LICENSE.ppt-master](docs/LICENSE.ppt-master)（`docs/driver.md` 是其文档的
+衍生整理）。第三方声明、商标与“无隶属关系”说明见 [NOTICE.md](NOTICE.md)。

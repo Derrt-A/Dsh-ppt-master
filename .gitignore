@@ -5,6 +5,14 @@ node_modules/
 config.local.json
 config.*.local.json
 
+# Secrets — never commit API keys, tokens or a generated settings.json
+.env
+.env.local
+.env.*.local
+settings.json
+*.pem
+*.key
+
 # Python
 .venv/
 venv/

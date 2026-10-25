@@ -21,6 +21,17 @@ First public repository release.
 - `docs/driver.md`, `docs/state-machine.md`, `docs/acceptance-checklist.md`,
   `docs/critic-pptx-prompt-template.md`.
 
+### Documentation and compliance
+
+- Added a verbatim copy of the upstream ppt-master MIT license at
+  `docs/LICENSE.ppt-master`; `docs/driver.md` is marked as derivative
+  documentation with attribution.
+- Added trademark / non-affiliation wording and a related-projects comparison.
+- Added `SECURITY.md`; `.gitignore` now covers `settings.json`, `.env*` keys and
+  PEM/key files.
+- Documented that the npm name `dsh-ppt` belongs to another independent project;
+  install this repository with `link:`.
+
 ### Changed
 
 - `ppt_export` no longer has the dead `notesEnabled` branch; the export chain is
