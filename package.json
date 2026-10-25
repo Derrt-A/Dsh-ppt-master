@@ -1,0 +1,63 @@
+{
+  "name": "dsh-ppt",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DeepSeek Harness host plugin: eight ppt_* tools driving a pinned ppt-master engine through a resumable, gated SVG-to-PPTX pipeline.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/",
+    "docs/",
+    "scripts/",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.mjs\"",
+    "test:smoke": "node test/smoke.test.mjs",
+    "check": "node --check lib/index.js"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "*"
+  },
+  "devDependencies": {
+    "@deepseek-ai/dsh-tools": "0.2.1-rc.2"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "plugin",
+    "pptx",
+    "presentation",
+    "svg",
+    "ai-agent"
+  ],
+  "author": "Derrta",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Derrt-A/Dsh-ppt-master.git"
+  },
+  "homepage": "https://github.com/Derrt-A/Dsh-ppt-master#readme",
+  "bugs": {
+    "url": "https://github.com/Derrt-A/Dsh-ppt-master/issues"
+  }
+}
