@@ -1,4 +1,4 @@
-// Offline smoke test for the durable dsh-ppt package: module resolves, exports
+// Offline smoke test for the durable dsh-ppt-gated package: module resolves, exports
 // the Cordis shape, and every tool definition compiles through defineTool.
 import assert from 'node:assert/strict'
 import { defineTool } from '@deepseek-ai/dsh-tools'
@@ -6,6 +6,7 @@ import * as mod from '../lib/index.js'
 
 assert.equal(typeof mod.apply, 'function', 'apply must be exported')
 assert.equal(typeof mod.name, 'string', 'name must be exported')
+assert.equal(mod.name, 'dsh-ppt-gated', 'plugin name must match the bundle row id')
 assert.ok(Array.isArray(mod.inject), 'inject must be an array')
 assert.deepEqual(mod.inject, ['tools', 'fs', 'subprocess'])
 
@@ -52,4 +53,4 @@ await assert.rejects(() => guarded.execute({}, {}), /slug/)
 assert.equal(ran, false)
 assert.ok(newTool.parameters.required.includes('slug'))
 
-console.log('dsh-ppt package OK:', registered.length, 'tools ->', names.join(', '))
+console.log('dsh-ppt-gated package OK:', registered.length, 'tools ->', names.join(', '))

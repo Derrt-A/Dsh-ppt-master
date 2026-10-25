@@ -1,6 +1,7 @@
-# dsh-ppt bundle patch: mounts the host half, which registers the eight ppt_*
-# tools (10-stage state machine, three user gates, dual-layer critic, resume)
-# driving the locally installed ppt-master engine under C:\Dsh_module\ppt-workbench.
+# dsh-ppt-gated bundle patch: mounts the host half, which registers the eight
+# ppt_* tools (10-stage state machine, three user gates, dual-layer critic,
+# resume) driving a locally installed ppt-master engine. The engine and Python
+# interpreter are resolved from <dataRoot>/settings.json at runtime.
 - insert:
-    - id: dsh-ppt
-      name: 'dsh-ppt'
+    - id: dsh-ppt-gated
+      name: '@derrt-a/dsh-ppt-gated'

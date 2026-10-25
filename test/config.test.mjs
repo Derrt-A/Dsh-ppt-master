@@ -9,7 +9,7 @@ import { after, test } from 'node:test'
 
 import { baseState, makeContext, writeState } from './helpers.mjs'
 
-const root = fs.mkdtempSync(path.join(os.tmpdir(), 'dsh-ppt-config-'))
+const root = fs.mkdtempSync(path.join(os.tmpdir(), 'dsh-ppt-gated-config-'))
 const project = path.join(root, 'projects', 'demo_ppt169_20260101')
 fs.mkdirSync(path.join(project, 'svg_output'), { recursive: true })
 fs.writeFileSync(path.join(root, 'projects.json'), JSON.stringify({ demo: { path: project } }), 'utf8')
@@ -38,7 +38,7 @@ test('a missing settings.json is reported with the path and setup hint', async (
 })
 
 test('an empty data root lists no projects instead of failing', async () => {
-  const empty = fs.mkdtempSync(path.join(os.tmpdir(), 'dsh-ppt-empty-'))
+  const empty = fs.mkdtempSync(path.join(os.tmpdir(), 'dsh-ppt-gated-empty-'))
   const previous = process.env.DSH_PPT_DATA
   process.env.DSH_PPT_DATA = empty
   try {

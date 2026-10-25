@@ -6,7 +6,7 @@ import os from 'node:os'
 import path from 'node:path'
 
 export function makeWorkspace() {
-  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'dsh-ppt-test-'))
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'dsh-ppt-gated-test-'))
   const project = path.join(root, 'projects', 'demo_ppt169_20260101')
   fs.mkdirSync(path.join(project, 'svg_output'), { recursive: true })
   fs.mkdirSync(path.join(project, 'notes'), { recursive: true })

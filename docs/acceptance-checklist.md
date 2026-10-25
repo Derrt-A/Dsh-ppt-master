@@ -1,4 +1,4 @@
-# dsh-ppt MVP pilot 验收记录（占位主题：无人机物流配送）
+# dsh-ppt-gated MVP pilot 验收记录（占位主题：无人机物流配送）
 
 > 验收标准来自设计确认（Q12/Q17/Q23）。✅ 全部通过，MVP 验收完成。
 > 本文件是 2026-09-05 在作者机器上的历史验收记录；路径已改写为数据区占位符。
@@ -43,7 +43,7 @@
 
 ## 过程记录（供复盘）
 - 工具链：dppt-2 动态插件 5 个 package（pkg-5 终版运行）；8 工具承载 10 阶段 + 三门制 + 双层 critic + resume
-- 环境：Python 3.12.10（winget 用户级 + 写入用户 PATH）；dsh-ppt-data\.venv 装两套 requirements
+- 环境：Python 3.12.10（winget 用户级 + 写入用户 PATH）；`<数据根>/.venv` 装两套 requirements
 - 驱动文档：`docs\driver.md`（子代理勘探引擎产出 607 行）；`docs\state-machine.md`（含实现期实测修正）；`docs\critic-pptx-prompt-template.md`
 - S1→门1→门2 一次通过；S6 两轮质量门修复（bounds 溢出、display:56 未申报）；S7 notes 10/10；S8 svg critic r1 pass
 - S9 导出 v1 → S10 pptx critic r1 fail（**真抓出缺陷**：P03 混排标签导出断行）→ 返工 2 轮：

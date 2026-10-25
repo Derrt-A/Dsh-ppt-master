@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented here.
 
+## [Unreleased]
+
+### Changed
+
+- Renamed the repository to `dsh-ppt-gated` and the package to
+  `@derrt-a/dsh-ppt-gated`; the Cordis bundle id is now `dsh-ppt-gated`.
+- Existing data roots and `DSH_PPT_DATA` values remain valid; the default data
+  directory name is unchanged.
+
 ## [0.1.0] - 2026-10-25
 
 First public repository release.

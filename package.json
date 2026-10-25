@@ -1,8 +1,8 @@
 {
-  "name": "dsh-ppt",
+  "name": "@derrt-a/dsh-ppt-gated",
   "version": "0.1.0",
   "private": true,
-  "description": "DeepSeek Harness host plugin: eight ppt_* tools driving a pinned ppt-master engine through a resumable, gated SVG-to-PPTX pipeline.",
+  "description": "Unofficial gated DeepSeek Harness host plugin: eight ppt_* tools driving a pinned ppt-master engine through a resumable SVG-to-PPTX pipeline with three user gates and a dual-layer critic.",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -55,10 +55,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Derrt-A/Dsh-ppt-master.git"
+    "url": "git+https://github.com/Derrt-A/dsh-ppt-gated.git"
   },
-  "homepage": "https://github.com/Derrt-A/Dsh-ppt-master#readme",
+  "homepage": "https://github.com/Derrt-A/dsh-ppt-gated#readme",
   "bugs": {
-    "url": "https://github.com/Derrt-A/Dsh-ppt-master/issues"
+    "url": "https://github.com/Derrt-A/dsh-ppt-gated/issues"
   }
 }

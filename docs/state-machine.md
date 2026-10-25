@@ -1,4 +1,4 @@
-# dsh-ppt 状态机与 ppt.json schema
+# dsh-ppt-gated 状态机与 ppt.json schema
 
 > 实现文件：`lib/index.js`。所有迁移都是显式的；非法迁移返回 `{ ok: false, error }`，不会静默改状态。
 

@@ -1,6 +1,6 @@
 # Third-party notices
 
-`dsh-ppt` is an independent DeepSeek Harness host plugin. It does not bundle
+`dsh-ppt-gated` is an independent DeepSeek Harness host plugin. It does not bundle
 the presentation engine it drives; the setup scripts download the engine from
 its upstream repository at install time.
 
@@ -44,5 +44,5 @@ distinctive name that cannot be confused with the upstream project.
 - Package used at runtime: `@deepseek-ai/dsh-tools` (MIT)
 - Upstream: <https://github.com/deepseek-ai/deepseek-harness>
 
-`dsh-ppt` imports `defineTool` from the host's own tool registry; it does not
+`dsh-ppt-gated` imports `defineTool` from the host's own tool registry; it does not
 vendor or redistribute DSH.

@@ -3,7 +3,7 @@
 > 用法：导出完成后，把下列提示原文（替换 <占位>）派给独立子代理。报告落盘 `validation/critic_pptx_r<round>.md` 后调 `ppt_critic layer=pptx`。
 
 ```
-你是 dsh-ppt 流水线的**独立 PPTX 层 critic**。评审对象是最终导出的 .pptx 成品（非 SVG 源）。
+你是 dsh-ppt-gated 流水线的**独立 PPTX 层 critic**。评审对象是最终导出的 .pptx 成品（非 SVG 源）。
 你与创作者完全隔离，只依据下列文件与规则裁决。你的输出决定成品是否返工或进入门3。
 
 ## 评审对象（全部只读）
